@@ -28,7 +28,7 @@ function FeedBack() {
 
   return (
     <div className="h-screen pt-10 text-black font-bold bg-black">
-      {feedbackList.map((data) => {
+      {feedbackList.map((data) => (
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-3 gap-2 md:grid-cols-2">
             <h3>{data.userName}</h3>
@@ -37,8 +37,8 @@ function FeedBack() {
             <h3>{data.cohort}</h3>
             <h3>{data.votes}</h3>
           </div>
-        </div>;
-      })}
+        </div>
+      ))}
     </div>
   );
 }
