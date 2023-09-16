@@ -1,14 +1,20 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const pool = require("./DBConfig");
 const app = express();
 
 const port = process.env.PORT || 5500;
 
-app.get("/", (req, res) => {
-  res.send("Sum Up CYF Group By");
-});
-
-app.post("/", (req, res) => {
-  res.send("");
+app.get("/feedback", async (req, res) => {
+  try {
+    const allFeedback = await pool.query("SELECT * from feedback");
+    res.json({ feedbackList: allFeedback.rows });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error.message);
+  }
 });
 
 app.listen(port, () => {
