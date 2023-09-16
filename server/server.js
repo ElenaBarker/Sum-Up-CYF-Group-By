@@ -6,6 +6,7 @@ const pool = require("./DBConfig");
 const app = express();
 
 const port = process.env.PORT || 5500;
+app.use(cors());
 
 app.get("/feedback", async (req, res) => {
   try {
