@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+/* .feedback{
+  border: 2px solid grey;
+  width: 300px;
+  height: 300px;
+} */
+
+.feedback {
+  width: 190px;
+  height: 254px;
+  border-radius: 30px;
+  background: #212121;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25),
+    -15px -15px 30px rgb(60, 60, 60);
+    color: aliceblue;
+}

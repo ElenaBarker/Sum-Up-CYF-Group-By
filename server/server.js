@@ -11,7 +11,7 @@ app.use(cors());
 app.get("/feedback", async (req, res) => {
   try {
     const allFeedback = await pool.query("SELECT * from feedback");
-    res.json({ feedbackList: allFeedback.rows });
+    res.json(allFeedback.rows);
   } catch (error) {
     console.log(error);
     res.status(500).send(error.message);
